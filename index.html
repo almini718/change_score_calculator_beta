@@ -3,7 +3,9 @@
   <head>
     <script src="https://kit.fontawesome.com/677c241b5a.js" crossorigin="anonymous"></script>
     <title>너 재수없어!</title>
+    <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1" />
     <link rel="stylesheet" href="index_Style.css" />
+    <script src="Univ_list_view.js"></script>
     <style>
       body {
         background-color: #f0f5f9;
@@ -18,7 +20,7 @@
         <button class="buttonright">
           <p><i class="fa-solid fa-house"></i> 홈으로</p>
         </button>
-        <button class="buttonright" id="menu-toggle">
+        <button class="buttonright" id="Univ_list">
           <p><i class="fa-solid fa-list"> </i> 학교 목록</p>
         </button>
 
@@ -36,43 +38,32 @@
         </div>
       </div>
     </div>
-    <h3 class="summary">
+    <p class="summary">
       재수를 막기 위한 환산점수 계산기!<br />
       작년의 데이터를 이용하여 대입을 도와줍니다! <br />
       작년 해당 과의 여러가지 정보들을 알 수 있습니다!
-    </h3>
-    <h2 class="howtouse">사용방법</h2>
-    <h4 class="howtouse_s">
+    </p>
+    <p class="howtouse">사용방법</p>
+    <p class="howtouse_s">
       1. 확인 할 과를 먼저 선택<br />
       2. 각 과목별 점수 및 등급 입력 후 점수 계산 클릭<br />
       3. 환산 점수 확인 후 결과 보기 클릭<br />
       4. 결과 확인
-    </h4>
-    <h2 class="updatelog">업데이트 내용</h2>
+    </p>
+    <p class="updatelog">업데이트 내용</p>
     <a class="updatever"> v0.1.4b<br /> </a>
-    <a class="updatelog_s"> index페이지에 css가 적용되었습니다. 하지만 아직 오류가 많습니다.<br /> </a>
-    <script>
-      // 메뉴에 학교이름 추가
-      const arr = [
-        ["부산대", "https://almini718.github.io/change_score_calculator/Busan_Univ/Busan.html"],
-        ["부경대", "https://almini718.github.io/change_score_calculator/Pukyong_Univ/Pukyong.html"],
-        ["한국해양대", "https://almini718.github.io/change_score_calculator/Korea_Maritime&Ocean_Univ/Korea_M&O.html"],
-      ];
-      arr.sort();
-      const menuList = document.querySelector(".menu");
-      arr.forEach((item) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.href = item[1];
-        a.textContent = item[0];
-        li.appendChild(a);
-        menuList.appendChild(li);
-      });
-    </script>
-    <center class="under_desc">본 사이트는 단순히 참고용을 목적으로 제작되었으며, 2022학년도의 입시 결과를 바탕으로 하여 다소 부정확할 수 있습니다.</center>
+    <a class="updatelog_s"> index페이지에 css가 적용되었습니다.<br />아직까지 오류가 많을 수 있습니다. </a>
+    <center class="under_desc">
+      <pre>
+본 사이트는 단순히 참고용을 목적으로 제작되었으며, 2022학년도의 입시 결과를 바탕으로 하여 다소 부정확할 수 있습니다.
+        Copyright 2023.  TEAM &lt;!DOCTYPE html&gt;.  All right reserved.</pre
+      >
+    </center>
 
     <script>
-      const menuToggle = document.getElementById("menu-toggle");
+      load_Univ_list();
+      //학교 목록 버튼
+      const menuToggle = document.getElementById("Univ_list");
       const menuBar = document.querySelector(".menu-bar");
 
       menuToggle.addEventListener("click", function () {
@@ -80,13 +71,8 @@
       });
 
       const hideMenuButton = document.getElementById("hide-menu");
-
       hideMenuButton.addEventListener("click", function () {
         menuBar.classList.remove("show-menu");
-
-        for (let i = 0; i < blurElements.length; i++) {
-          blurElements[i].classList.remove("blur");
-        }
       });
     </script>
   </body>
